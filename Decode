@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main()
+{
+    int c, x;
+    char str[26];
+    
+    
+    printf("\nEnter Message:\t");
+    scanf("%[^\n]s", str);
+    for (c = 0; (c <100 && str[c] != '\0'); c++)
+    str[c] = str [c] -3;
+    printf("\nDecrypted Message: %s\n", str);
+
+    return 0;
+}
