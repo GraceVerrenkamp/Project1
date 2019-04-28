@@ -12,7 +12,7 @@ int main()
 
 
    printf("\nEnter Message:\t");
-   gets(str);//scans or reads text from a stdin , and stores it in the String variable. 
+   gets(str);//scans or reads text from a stdin, and stores it in the String variable. 
 
    printf("\nChoose from following:\n");
    printf("1: Rotational Encryption.\n");
@@ -21,23 +21,44 @@ int main()
    printf("4: Substitutional Decryption.\n");   
    scanf("%d", &x);
 
-   //using switch case statements
-   switch(x)
+   //switch case statements allow one of multiple codes to run 
+switch(x)
    {
-   case 1:
-      for(i = 0; (i < 26 && str[i] != '\0'); i++)
-        str[i] = str[i] + 3; //key for encryption is 3 that is added to ASCII value
-
-      printf("\nEncrypted Message: %s\n", str);
-      break;
-
+   case 1: 
+   printf("\nEncrypted Message: ");
+    for(i = 0; i < 26; i++) {
+          char let = str[i];
+          if(let == '\n' || let == '\0') {
+              break;
+          }
+    if ((let >= 'a' && let < 'z' - 7) || (let >= 'A' && let < 'Z' - 7)) {
+      printf("%c", str[i] + 7); // +7 is key 
+      }
+    else if ((let >= 'z' - 7 && let <= 'z') || (let >= 'Z' - 7 && let <= 'Z')) {
+        printf("%c", str[i] + 7 - 26); } // -7 is key 
+        else { 
+        printf("%c", let); }
+     } break;
 
    case 2:
-      for(i = 0; (i < 26 && str[i] != '\0'); i++)
-        str[i] = str[i] - 3; //key for decryption is 3 that is subtracted to ASCII value
-
-      printf("\nDecrypted Message: %s\n", str);
-      break;
+   printf("\nDecrypted Message: ");
+      for(i = 0; i < 26; i++) {
+      char let = str[i];
+      if (let == '\n' || let == '\0') {
+      break; 
+      }
+      if ((let >= 'a' && let < 'z' - (26 - 7)) || (let >= 'A' && let < 'Z' - (26 - 7))) {
+          printf ("%c", str[i] + (26 - 7));
+      }
+      else if ((let >= 'z' - (26 - 7) && let <= 'z') || (let >= 'Z' - (26 - 7) && let <= 'Z')) {
+          printf ("%c", str [i] + (26 - 7) - 26);
+          }
+     else {
+         printf("%c", let);
+     }
+     }
+      break; 
+      
    case 3:
    printf("\nEncrypted Message: ");
       for(i = 0; i < 26; i++) {
