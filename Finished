@@ -1,0 +1,82 @@
+#include<stdio.h>
+
+int main()
+{
+   int i, j, x;
+   int let;// let = letter
+
+   char str[26];
+   char*alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+   char*key = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+
+
+
+   printf("\nEnter Message:\t");
+   gets(str);//scans or reads text from a stdin , and stores it in the String variable. 
+
+   printf("\nChoose from following:\n");
+   printf("1: Rotational Encryption.\n");
+   printf("2: Rotational Decryption.\n");
+   printf("3: Substitutional Encryption.\n");
+   printf("4: Substitutional Decryption.\n");   
+   scanf("%d", &x);
+
+   //using switch case statements
+   switch(x)
+   {
+   case 1:
+      for(i = 0; (i < 26 && str[i] != '\0'); i++)
+        str[i] = str[i] + 3; //the key for encryption is 3 that is added to ASCII value
+
+      printf("\nEncrypted string: %s\n", str);
+      break;
+
+
+   case 2:
+      for(i = 0; (i < 26 && str[i] != '\0'); i++)
+        str[i] = str[i] - 3; //the key for decryption is 3 that is subtracted to ASCII value
+
+      printf("\nDecrypted Message: %s\n", str);
+      break;
+   case 3:
+   printf("\nEncrypted Message: ");
+      for(i = 0; i < 26; i++) {
+          char let = str[i];
+          if(let == '\n' || let == '\0') {
+              break; //done here
+          }
+          if((let >= 'a' && let <= 'z') || (let >= 'A' && let <= 'Z')) {
+              for(j = 0; j < 52; j++) {
+                  if(alphabet [j] == let) {
+                      printf("%c", key[j]);
+                  }
+              }
+          } else{
+              printf("%c", let);
+          }
+      }
+      break;
+
+    case 4:
+    printf("\nDecrypted Message: ");
+      for(i = 0; i < 26; i++) {
+          char let = str[i];
+          if(let == '\n' || let == '\0') {
+              break; //done here
+          }
+          if((let >= 'a' && let <= 'z') || (let >= 'A' && let <= 'Z')) {
+              for(j = 0; j < 52; j++) {
+                  if(key [j] == let) {
+                      printf("%c", alphabet[j]);
+                  }
+              }
+          } else {
+              printf("%c", let);
+          }
+      }
+      break;    
+      default:
+      printf("\nError\n");
+   }
+   return 0;
+}
