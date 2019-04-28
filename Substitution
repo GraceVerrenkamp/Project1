@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main(void)
+{ int i;
+printf ("Enter Message:\n");
+scanf ("%c", &i);
+for (i = 0; i < 20; i++) {
+switch (i) {
+case 'a': printf("q"); break;
+case 'b': printf("w"); break;
+case 'c': printf("e"); break;
+case 'd': printf("r"); break;
+case 'e': printf("t"); break;
+case 'f': printf("y"); break;
+case 'g': printf("u"); break;
+case 'h': printf("i"); break;
+case 'i': printf("o"); break;
+case 'j': printf("p"); break;
+case 'k': printf("a"); break;
+case 'l': printf("s"); break;
+case 'm': printf("d"); break;
+case 'n': printf("f"); break;
+case 'o': printf("g"); break;
+case 'p': printf("h"); break;
+case 'q': printf("j"); break;
+case 'r': printf("k"); break;
+case 's': printf("l"); break;
+case 't': printf("z"); break;
+case 'u': printf("x"); break;
+case 'v': printf("c"); break;
+case 'w': printf("v"); break;
+case 'x': printf("b"); break;
+case 'y': printf("n"); break;
+case 'z': printf("m"); break;
+//case ''; printf("..."); break;
+default: printf("Error\n");
+}
+}
+    return 0;
+}
