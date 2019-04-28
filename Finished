@@ -7,7 +7,7 @@ int main()
 
    char str[26];
    char*alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-   char*key = "keiqutvhpsncfamwgdjxzybrolKEIQUTVHPSNCFAMWGDJXZYBROL";
+   char*key =      "keiqutvhpsncfamwgdjxzybrolKEIQUTVHPSNCFAMWGDJXZYBROL";
 
 
 
